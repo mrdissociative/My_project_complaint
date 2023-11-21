@@ -13,7 +13,16 @@ def homepage(request):
 #user register
 def userreg(request):
     if request.method == 'POST':
-        member = User(username=request.POST['username'], password=request.POST['password'],  firstname=request.POST['firstname'], date=request.POST['date'],lastname=request.POST['lastname'], gender=request.POST['gender'], phone=request.POST['phone'], address=request.POST['address'], email=request.POST['email'], aadharnumber=request.POST['aadharnumber'])
+        member = User(username=request.POST['username'],
+                password=request.POST['password'],  
+                firstname=request.POST['firstname'], 
+                date=request.POST['date'],
+                lastname=request.POST['lastname'], 
+                gender=request.POST['gender'], 
+                phone=request.POST['phone'], 
+                address=request.POST['address'], 
+                email=request.POST['email'], 
+                aadharnumber=request.POST['aadharnumber'])
         member.save()
         return redirect(userlogin)
     else:
@@ -73,7 +82,14 @@ def changepassword(request):
 #department registration
 def depregister(request):
     if request.method == 'POST':
-        member1 = Department(username=request.POST['username'], password=request.POST['password'], firstname=request.POST['firstname'], lastname=request.POST['lastname'],department=request.POST['department'], phone=request.POST['phone'], address=request.POST['address'],email=request.POST['email'])
+        member1 = Department(username=request.POST['username'], 
+                password=request.POST['password'], 
+                firstname=request.POST['firstname'], 
+                lastname=request.POST['lastname'],
+                department=request.POST['department'], 
+                phone=request.POST['phone'], 
+                address=request.POST['address'],
+                email=request.POST['email'])
         member1.save()
         return redirect(deplogin)
     else:
